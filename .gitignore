@@ -1,0 +1,5 @@
+bin/
+obj/
+caprise-platform.zip
+.vs/
+.vscode/

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+      <TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
+    <RootNamespace>CapRise</RootNamespace>
+    <AssemblyName>CapRise</AssemblyName>
+    <ApplicationTitle>CapRise</ApplicationTitle>
+    <ApplicationId>com.yourcompany.caprise</ApplicationId>
+    <UseMaui>true</UseMaui>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <MauiAsset Include="src\wwwroot\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="CapRise.Resources.Styles">
+    <Color x:Key="PrimaryColor">#08785A</Color>
+    <Color x:Key="SecondaryColor">#0A7258</Color>
+    <Color x:Key="BackgroundColor">#FFFFFF</Color>
+    <Color x:Key="TextColor">#17211F</Color>
+</ResourceDictionary>
