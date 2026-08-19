@@ -62,3 +62,9 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
+
+## Shared Approval Backend
+
+The Supabase project for the platform is `cptlygpmhshrvluhhgss`. The reproducible database schema is in `supabase/schema.sql` and has been applied to the project.
+
+The current static frontend still uses its demo browser storage. To connect shared user accounts and the admin approval panel, migrate authentication to Supabase Auth using email/password or phone OTP, then connect payment submissions to `payment_requests`. Never place a Supabase service-role key, MTN credential, or Airtel credential in the frontend.
