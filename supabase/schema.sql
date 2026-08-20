@@ -4,9 +4,14 @@
 create table if not exists public.profiles (
   id uuid primary key references auth.users(id) on delete cascade,
   phone text not null,
+  username text,
+  referred_by uuid references public.profiles(id),
   role text not null default 'user' check (role in ('user', 'admin')),
   created_at timestamptz not null default now()
 );
+
+alter table public.profiles add column if not exists username text;
+alter table public.profiles add column if not exists referred_by uuid references public.profiles(id);
 
 create table if not exists public.payment_requests (
   id uuid primary key default gen_random_uuid(),
@@ -53,6 +58,15 @@ alter table public.withdrawal_requests enable row level security;
 
 create policy "Users can read own profile" on public.profiles
   for select using (id = auth.uid() or public.is_admin());
+
+create policy "Users can read their referrals" on public.profiles
+  for select using (referred_by = auth.uid());
+
+create policy "Users can create own profile" on public.profiles
+  for insert with check (id = auth.uid());
+
+create policy "Users can update own profile" on public.profiles
+  for update using (id = auth.uid()) with check (id = auth.uid());
 
 create policy "Users can read own payments" on public.payment_requests
   for select using (user_id = auth.uid() or public.is_admin());
