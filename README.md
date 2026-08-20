@@ -2,6 +2,11 @@
 
 CapRise is a browser-based investment platform for account access, investment packages, wallet balances, referrals, withdrawals, and transaction history. The web platform lives in `src/wwwroot/index.html` and can be deployed to any static web host.
 
+## Live Platform
+
+- Netlify: https://wondrous-palmier-ac5a39.netlify.app
+- GitHub Pages: https://bridan256.github.io/CapRise/
+
 ## Features
 
 - **Investment Management**: Users can view, add, and remove investments easily.
